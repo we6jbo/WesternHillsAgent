@@ -2,59 +2,36 @@
 <ui version="4.0">
  <class>MainWindow</class>
  <widget class="QMainWindow" name="MainWindow">
-  <property name="geometry">
-   <rect><x>0</x><y>0</y><width>800</width><height>720</height></rect>
-  </property>
-  <property name="windowTitle"><string>WesternHillsAgent v0.2</string></property>
+  <property name="geometry"><rect><x>0</x><y>0</y><width>840</width><height>820</height></rect></property>
+  <property name="windowTitle"><string>WesternHillsAgent v0.3</string></property>
   <widget class="QWidget" name="centralwidget">
    <layout class="QVBoxLayout" name="verticalLayout">
-    <item><widget class="QLabel" name="titleLabel">
-     <property name="text"><string>WesternHillsAgent</string></property>
-     <property name="alignment"><set>Qt::AlignmentFlag::AlignCenter</set></property>
-     <property name="styleSheet"><string notr="true">font-size: 22px; font-weight: bold;</string></property>
-    </widget></item>
-    <item><widget class="QLabel" name="subtitleLabel">
-     <property name="text"><string>Local AI software agent foundation - persistent port integration</string></property>
-     <property name="alignment"><set>Qt::AlignmentFlag::AlignCenter</set></property>
-    </widget></item>
-    <item><widget class="QGroupBox" name="identityGroup"><property name="title"><string>Identity</string></property>
-     <layout class="QFormLayout" name="identityForm">
-      <item row="0" column="0"><widget class="QLabel" name="identityLabel"><property name="text"><string>Agent:</string></property></widget></item>
-      <item row="0" column="1"><widget class="QLabel" name="identityValue"><property name="text"><string>-</string></property></widget></item>
-      <item row="1" column="0"><widget class="QLabel" name="creatorLabel"><property name="text"><string>Creator:</string></property></widget></item>
-      <item row="1" column="1"><widget class="QLabel" name="creatorValue"><property name="text"><string>-</string></property></widget></item>
-      <item row="2" column="0"><widget class="QLabel" name="descriptionLabel"><property name="text"><string>Description:</string></property></widget></item>
-      <item row="2" column="1"><widget class="QLabel" name="descriptionValue"><property name="wordWrap"><bool>true</bool></property><property name="text"><string>-</string></property></widget></item>
-      <item row="3" column="0"><widget class="QLabel" name="provenanceLabel"><property name="text"><string>TG codes:</string></property></widget></item>
-      <item row="3" column="1"><widget class="QLabel" name="provenanceValue"><property name="wordWrap"><bool>true</bool></property><property name="text"><string>-</string></property></widget></item>
-     </layout>
-    </widget></item>
-    <item><widget class="QGroupBox" name="networkGroup"><property name="title"><string>Local communication endpoints</string></property>
-     <layout class="QFormLayout" name="networkForm">
-      <item row="0" column="0"><widget class="QLabel" name="networkStatusLabel"><property name="text"><string>Status:</string></property></widget></item>
-      <item row="0" column="1"><widget class="QLabel" name="networkStatusValue"><property name="wordWrap"><bool>true</bool></property><property name="text"><string>-</string></property></widget></item>
-      <item row="1" column="0"><widget class="QLabel" name="registryModeLabel"><property name="text"><string>Port assignment mode:</string></property></widget></item>
-      <item row="1" column="1"><widget class="QLabel" name="registryModeValue"><property name="wordWrap"><bool>true</bool></property><property name="text"><string>-</string></property></widget></item>
-      <item row="2" column="0"><widget class="QLabel" name="registryPathLabel"><property name="text"><string>Registry directory:</string></property></widget></item>
-      <item row="2" column="1"><widget class="QLabel" name="registryPathValue"><property name="wordWrap"><bool>true</bool></property><property name="text"><string>-</string></property></widget></item>
-      <item row="3" column="0"><widget class="QLabel" name="primaryPortLabel"><property name="text"><string>Primary TCP port:</string></property></widget></item>
-      <item row="3" column="1"><widget class="QLabel" name="primaryPortValue"><property name="text"><string>-</string></property></widget></item>
-      <item row="4" column="0"><widget class="QLabel" name="secondaryPortLabel"><property name="text"><string>Secondary TCP port:</string></property></widget></item>
-      <item row="4" column="1"><widget class="QLabel" name="secondaryPortValue"><property name="text"><string>-</string></property></widget></item>
-     </layout>
-    </widget></item>
-    <item><widget class="QGroupBox" name="testGroup"><property name="title"><string>Local AgentCore test</string></property>
-     <layout class="QVBoxLayout" name="testLayout">
+    <item><widget class="QLabel" name="titleLabel"><property name="text"><string>WesternHillsAgent</string></property><property name="alignment"><set>Qt::AlignmentFlag::AlignCenter</set></property><property name="styleSheet"><string notr="true">font-size: 22px; font-weight: bold;</string></property></widget></item>
+    <item><widget class="QLabel" name="subtitleLabel"><property name="text"><string>Local AI agent - persistent ports, safe local protocol, continuation launcher</string></property><property name="alignment"><set>Qt::AlignmentFlag::AlignCenter</set></property></widget></item>
+    <item><widget class="QGroupBox" name="identityGroup"><property name="title"><string>Identity</string></property><layout class="QFormLayout" name="identityForm">
+      <item row="0" column="0"><widget class="QLabel" name="identityLabel"><property name="text"><string>Agent:</string></property></widget></item><item row="0" column="1"><widget class="QLabel" name="identityValue"><property name="text"><string>-</string></property></widget></item>
+      <item row="1" column="0"><widget class="QLabel" name="creatorLabel"><property name="text"><string>Creator:</string></property></widget></item><item row="1" column="1"><widget class="QLabel" name="creatorValue"><property name="text"><string>-</string></property></widget></item>
+      <item row="2" column="0"><widget class="QLabel" name="descriptionLabel"><property name="text"><string>Description:</string></property></widget></item><item row="2" column="1"><widget class="QLabel" name="descriptionValue"><property name="wordWrap"><bool>true</bool></property><property name="text"><string>-</string></property></widget></item>
+      <item row="3" column="0"><widget class="QLabel" name="provenanceLabel"><property name="text"><string>TG codes:</string></property></widget></item><item row="3" column="1"><widget class="QLabel" name="provenanceValue"><property name="wordWrap"><bool>true</bool></property><property name="text"><string>-</string></property></widget></item>
+    </layout></widget></item>
+    <item><widget class="QGroupBox" name="networkGroup"><property name="title"><string>Local communication endpoints</string></property><layout class="QFormLayout" name="networkForm">
+      <item row="0" column="0"><widget class="QLabel" name="networkStatusLabel"><property name="text"><string>Status:</string></property></widget></item><item row="0" column="1"><widget class="QLabel" name="networkStatusValue"><property name="wordWrap"><bool>true</bool></property><property name="text"><string>-</string></property></widget></item>
+      <item row="1" column="0"><widget class="QLabel" name="registryModeLabel"><property name="text"><string>Port assignment mode:</string></property></widget></item><item row="1" column="1"><widget class="QLabel" name="registryModeValue"><property name="wordWrap"><bool>true</bool></property><property name="text"><string>-</string></property></widget></item>
+      <item row="2" column="0"><widget class="QLabel" name="registryPathLabel"><property name="text"><string>Registry directory:</string></property></widget></item><item row="2" column="1"><widget class="QLabel" name="registryPathValue"><property name="wordWrap"><bool>true</bool></property><property name="text"><string>-</string></property></widget></item>
+      <item row="3" column="0"><widget class="QLabel" name="primaryPortLabel"><property name="text"><string>Primary TCP port:</string></property></widget></item><item row="3" column="1"><widget class="QLabel" name="primaryPortValue"><property name="text"><string>-</string></property></widget></item>
+      <item row="4" column="0"><widget class="QLabel" name="secondaryPortLabel"><property name="text"><string>Secondary TCP port:</string></property></widget></item><item row="4" column="1"><widget class="QLabel" name="secondaryPortValue"><property name="text"><string>-</string></property></widget></item>
+    </layout></widget></item>
+    <item><widget class="QGroupBox" name="continuationGroup"><property name="title"><string>Continuation</string></property><layout class="QFormLayout" name="continuationForm">
+      <item row="0" column="0"><widget class="QLabel" name="continuationPathLabel"><property name="text"><string>Config:</string></property></widget></item><item row="0" column="1"><widget class="QLabel" name="continuationPathValue"><property name="text"><string>-</string></property></widget></item>
+      <item row="1" column="0"><widget class="QLabel" name="continuationUrlLabel"><property name="text"><string>URL:</string></property></widget></item><item row="1" column="1"><widget class="QLabel" name="continuationUrlValue"><property name="wordWrap"><bool>true</bool></property><property name="text"><string>-</string></property></widget></item>
+      <item row="2" column="1"><widget class="QPushButton" name="openContinuationButton"><property name="text"><string>Open continuation URL</string></property></widget></item>
+    </layout></widget></item>
+    <item><widget class="QGroupBox" name="testGroup"><property name="title"><string>Local AgentCore test</string></property><layout class="QVBoxLayout" name="testLayout">
       <item><widget class="QLineEdit" name="localTestInput"><property name="placeholderText"><string>Type a local test message</string></property></widget></item>
       <item><widget class="QPushButton" name="localTestButton"><property name="text"><string>Send to AgentCore</string></property></widget></item>
       <item><widget class="QLabel" name="localTestOutput"><property name="wordWrap"><bool>true</bool></property><property name="text"><string>No local test run yet.</string></property></widget></item>
-     </layout>
-    </widget></item>
-    <item><widget class="QGroupBox" name="logGroup"><property name="title"><string>Status log</string></property>
-     <layout class="QVBoxLayout" name="logLayout">
-      <item><widget class="QPlainTextEdit" name="logBox"><property name="readOnly"><bool>true</bool></property></widget></item>
-     </layout>
-    </widget></item>
+    </layout></widget></item>
+    <item><widget class="QGroupBox" name="logGroup"><property name="title"><string>Status log</string></property><layout class="QVBoxLayout" name="logLayout"><item><widget class="QPlainTextEdit" name="logBox"><property name="readOnly"><bool>true</bool></property></widget></item></layout></widget></item>
    </layout>
   </widget>
  </widget>

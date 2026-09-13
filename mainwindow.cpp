@@ -9,16 +9,24 @@
 MainWindow::MainWindow(QWidget *parent)
     : QMainWindow(parent),
       ui(new Ui::MainWindow),
-      m_portManager(this)
+      m_portManager(this),
+      m_continuationManager(this),
+      m_agentProtocol(&m_portManager, &m_continuationManager,
+                      &m_moltbookConnector, &m_localAgentConnector, this)
 {
     ui->setupUi(this);
 
     connect(ui->localTestButton, &QPushButton::clicked,
             this, &MainWindow::runLocalAgentTest);
-    connect(&m_portManager, &PortManager::connectionObserved,
-            this, &MainWindow::noteConnection);
+    connect(ui->openContinuationButton, &QPushButton::clicked,
+            this, &MainWindow::openContinuation);
+    connect(&m_portManager, &PortManager::connectionAccepted,
+            &m_agentProtocol, &AgentProtocol::acceptConnection);
+    connect(&m_agentProtocol, &AgentProtocol::protocolEvent,
+            this, &MainWindow::noteProtocolEvent);
 
     populateIdentity();
+    initializeContinuation();
     startListeners();
     attemptTgRegistration();
 }
@@ -31,14 +39,24 @@ MainWindow::~MainWindow()
 
 void MainWindow::populateIdentity()
 {
-    ui->identityValue->setText(
-        QStringLiteral("%1 (%2)")
-            .arg(AgentIdentity::displayName(), AgentIdentity::senderType()));
+    ui->identityValue->setText(QStringLiteral("%1 (%2)").arg(AgentIdentity::displayName(), AgentIdentity::senderType()));
     ui->creatorValue->setText(AgentIdentity::creatorName());
     ui->descriptionValue->setText(AgentIdentity::description());
     ui->provenanceValue->setText(AgentIdentity::provenanceCodes().join(QStringLiteral(", ")));
-
     appendLog(QStringLiteral("Started as software identity WesternHillsAgent, not as a human user."));
+}
+
+void MainWindow::initializeContinuation()
+{
+    if (!m_continuationManager.ensureConfiguration()) {
+        ui->continuationPathValue->setText(m_continuationManager.configurationPath());
+        ui->continuationUrlValue->setText(QStringLiteral("ERROR"));
+        appendLog(QStringLiteral("Continuation configuration unavailable: %1").arg(m_continuationManager.lastError()));
+        return;
+    }
+    ui->continuationPathValue->setText(m_continuationManager.configurationPath());
+    ui->continuationUrlValue->setText(m_continuationManager.configuredUrl().toString());
+    appendLog(QStringLiteral("Continuation configuration ready at %1").arg(m_continuationManager.configurationPath()));
 }
 
 void MainWindow::startListeners()
@@ -53,26 +71,18 @@ void MainWindow::startListeners()
         return;
     }
 
-    ui->networkStatusValue->setText(QStringLiteral("Listening on 127.0.0.1 only; unauthenticated data is rejected"));
+    ui->networkStatusValue->setText(QStringLiteral("Listening on 127.0.0.1; v3 safe NDJSON protocol active"));
     ui->primaryPortValue->setText(QString::number(m_portManager.primaryPort()));
     ui->secondaryPortValue->setText(QString::number(m_portManager.secondaryPort()));
     ui->registryModeValue->setText(m_portManager.registryStatus());
-    ui->registryPathValue->setText(
-        m_portManager.registryDataDirectory().isEmpty()
-            ? QStringLiteral("none - temporary fallback")
-            : m_portManager.registryDataDirectory());
+    ui->registryPathValue->setText(m_portManager.registryDataDirectory().isEmpty()
+                                       ? QStringLiteral("none - temporary fallback")
+                                       : m_portManager.registryDataDirectory());
 
     appendLog(QStringLiteral("Primary localhost TCP port: %1").arg(m_portManager.primaryPort()));
     appendLog(QStringLiteral("Secondary localhost TCP port: %1").arg(m_portManager.secondaryPort()));
     appendLog(m_portManager.registryStatus());
-
-    if (m_portManager.usingPersistentRegistry()) {
-        appendLog(QStringLiteral("Both endpoints are persistent JeremiahPortGuard assignments."));
-    } else {
-        appendLog(QStringLiteral("Persistent registry assignment was unavailable; ports are temporary for this run."));
-    }
-
-    appendLog(QStringLiteral("Version 2 still rejects inbound application data until authentication and message framing are implemented."));
+    appendLog(QStringLiteral("Version 3 accepts newline-delimited JSON informational requests; computer-control commands remain disabled."));
 }
 
 void MainWindow::runLocalAgentTest()
@@ -82,10 +92,20 @@ void MainWindow::runLocalAgentTest()
     appendLog(QStringLiteral("Local AgentCore test executed."));
 }
 
-void MainWindow::noteConnection(const QString &channel, const QString &peer)
+void MainWindow::openContinuation()
 {
-    appendLog(QStringLiteral("Observed and rejected unauthenticated %1 connection from %2.")
-                  .arg(channel, peer));
+    if (m_continuationManager.openConfiguredUrl()) {
+        ui->continuationUrlValue->setText(m_continuationManager.configuredUrl().toString());
+        appendLog(QStringLiteral("Opened continuation URL as the current desktop user: %1")
+                      .arg(m_continuationManager.configuredUrl().toString()));
+    } else {
+        appendLog(QStringLiteral("Could not open continuation URL: %1").arg(m_continuationManager.lastError()));
+    }
+}
+
+void MainWindow::noteProtocolEvent(const QString &message)
+{
+    appendLog(message);
 }
 
 void MainWindow::appendLog(const QString &message)
@@ -104,9 +124,8 @@ void MainWindow::attemptTgRegistration()
         QStringLiteral("--reference"), QStringLiteral("WesternHillsAgent bundled project provenance")
     };
 
-    if (!QProcess::startDetached(program, args)) {
+    if (!QProcess::startDetached(program, args))
         appendLog(QStringLiteral("tg-register-project was unavailable or could not be started; bundled provenance remains active."));
-    } else {
+    else
         appendLog(QStringLiteral("Requested local TG project registration."));
-    }
 }

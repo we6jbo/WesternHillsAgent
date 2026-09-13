@@ -1,6 +1,6 @@
 cmake_minimum_required(VERSION 3.21)
 
-project(WesternHillsAgent VERSION 0.2.0 LANGUAGES CXX)
+project(WesternHillsAgent VERSION 0.3.0 LANGUAGES CXX)
 
 set(CMAKE_CXX_STANDARD 17)
 set(CMAKE_CXX_STANDARD_REQUIRED ON)
@@ -21,6 +21,14 @@ qt_add_executable(WesternHillsAgent
     agentidentity.h
     portmanager.cpp
     portmanager.h
+    agentprotocol.cpp
+    agentprotocol.h
+    continuationmanager.cpp
+    continuationmanager.h
+    moltbookconnector.cpp
+    moltbookconnector.h
+    localagentconnector.cpp
+    localagentconnector.h
 )
 
 target_link_libraries(WesternHillsAgent PRIVATE
