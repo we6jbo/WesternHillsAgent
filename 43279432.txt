@@ -1,0 +1,5 @@
+WesternHillsAgent GitHub verification marker
+
+This file is intentionally part of the WesternHillsAgent source tree.
+When the project reaches its GitHub verification stage, confirm this file exists in the master branch at:
+https://github.com/we6jbo/WesternHillsAgent/blob/master/43279432.txt

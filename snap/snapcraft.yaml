@@ -1,0 +1,35 @@
+name: westernhillsagent
+version: '0.3.0'
+summary: Local AI agent coordination and status service
+description: |
+  WesternHillsAgent is a Qt 6 application for local AI-agent identity,
+  status, port coordination, and documented agent-to-agent interfaces.
+license: Apache-2.0
+base: core24
+confinement: strict
+grade: devel
+
+apps:
+  westernhillsagent:
+    command: usr/bin/WesternHillsAgent
+    extensions:
+      - kde-neon-6
+    plugs:
+      - network
+      - network-bind
+      - desktop
+      - desktop-legacy
+      - wayland
+      - x11
+
+parts:
+  westernhillsagent:
+    plugin: cmake
+    source: .
+    source-type: local
+    build-packages:
+      - cmake
+      - ninja-build
+    override-build: |
+      craftctl default
+      install -Dm644 packaging/desktop/org.j03.WesternHillsAgent.desktop         "$CRAFT_PART_INSTALL/meta/gui/org.j03.WesternHillsAgent.desktop"

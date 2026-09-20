@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<component type="desktop-application">
+  <id>org.j03.WesternHillsAgent</id>
+  <name>WesternHillsAgent</name>
+  <summary>Local AI agent coordination and status service</summary>
+  <metadata_license>CC0-1.0</metadata_license>
+  <project_license>Apache-2.0</project_license>
+  <description>
+    <p>
+      WesternHillsAgent is a Qt 6 application for local AI-agent identity,
+      status, port coordination, and documented agent-to-agent interfaces.
+    </p>
+  </description>
+  <launchable type="desktop-id">org.j03.WesternHillsAgent.desktop</launchable>
+  <url type="homepage">https://github.com/we6jbo/WesternHillsAgent</url>
+  <provides>
+    <binary>WesternHillsAgent</binary>
+  </provides>
+  <releases>
+    <release version="0.3.0" date="2026-09-20"/>
+  </releases>
+</component>

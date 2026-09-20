@@ -1,0 +1,264 @@
+{
+  "schema": 1,
+  "generated_at": "2026-09-20T10:21:14-07:00",
+  "project_id": "WesternHillsAgent",
+  "reference": "WesternHillsAgent bundled project provenance",
+  "codes": [
+    "TG812186",
+    "TG903148",
+    "TG856134",
+    "TG315902",
+    "TG333041",
+    "TG943760",
+    "TG239670"
+  ],
+  "records": [
+    {
+      "code": "TG812186",
+      "registry_matches": [
+        {
+          "person_no": 33,
+          "display_name": "Mary",
+          "details": "B:Abt 1844 Ireland",
+          "name_permanent": 0,
+          "code": "TG812186",
+          "kind": "TG",
+          "permanent": 0,
+          "aliases": [],
+          "provisional_facts": [],
+          "relationships": [
+            {
+              "child": "Edward Mccabe",
+              "parent": "Mary",
+              "relation": "parent",
+              "confidence": 1.0,
+              "permanent": 1
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "code": "TG903148",
+      "registry_matches": [
+        {
+          "person_no": 26,
+          "display_name": "Robert R Hedtke",
+          "details": "B:18 Jan 1876 Sibley, Minnesota D:13 FEB 1954 Fresno, California, USA",
+          "name_permanent": 1,
+          "code": "TG903148",
+          "kind": "TG",
+          "permanent": 1,
+          "aliases": [],
+          "provisional_facts": [],
+          "relationships": [
+            {
+              "child": "Amelia B Hetdke",
+              "parent": "Robert R Hedtke",
+              "relation": "parent",
+              "confidence": 1.0,
+              "permanent": 1
+            },
+            {
+              "child": "Robert R Hedtke",
+              "parent": "Amelia Carolina Luedtke",
+              "relation": "parent",
+              "confidence": 1.0,
+              "permanent": 1
+            },
+            {
+              "child": "Robert R Hedtke",
+              "parent": "August Friedrich Hedtke",
+              "relation": "parent",
+              "confidence": 1.0,
+              "permanent": 1
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "code": "TG856134",
+      "registry_matches": [
+        {
+          "person_no": 11,
+          "display_name": "Polly Myrtle Bowman",
+          "details": "B:18 May 1887 Morgan County, Indiana, USA D:24 Jun 1955 San Diego, San Diego, California, United States",
+          "name_permanent": 1,
+          "code": "TG856134",
+          "kind": "TG",
+          "permanent": 1,
+          "aliases": [],
+          "provisional_facts": [],
+          "relationships": [
+            {
+              "child": "Noma Vade Smith",
+              "parent": "Polly Myrtle Bowman",
+              "relation": "parent",
+              "confidence": 1.0,
+              "permanent": 1
+            },
+            {
+              "child": "Polly Myrtle Bowman",
+              "parent": "Nancy Jane Lambert",
+              "relation": "parent",
+              "confidence": 1.0,
+              "permanent": 1
+            },
+            {
+              "child": "Polly Myrtle Bowman",
+              "parent": "Thomas S Bowman",
+              "relation": "parent",
+              "confidence": 1.0,
+              "permanent": 1
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "code": "TG315902",
+      "registry_matches": [
+        {
+          "person_no": 5,
+          "display_name": "Noma Vade Smith",
+          "details": "B:19 Mar 1927 San Diego, California D:20 Dec 1991 San Diego County, California, USA",
+          "name_permanent": 1,
+          "code": "TG315902",
+          "kind": "TG",
+          "permanent": 1,
+          "aliases": [],
+          "provisional_facts": [],
+          "relationships": [
+            {
+              "child": "Dudley McCabe",
+              "parent": "Noma Vade Smith",
+              "relation": "parent",
+              "confidence": 1.0,
+              "permanent": 1
+            },
+            {
+              "child": "Noma Vade Smith",
+              "parent": "Archie T Smith",
+              "relation": "parent",
+              "confidence": 1.0,
+              "permanent": 1
+            },
+            {
+              "child": "Noma Vade Smith",
+              "parent": "Polly Myrtle Bowman",
+              "relation": "parent",
+              "confidence": 1.0,
+              "permanent": 1
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "code": "TG333041",
+      "registry_matches": [
+        {
+          "person_no": 79,
+          "display_name": "Mary Jane Sumner",
+          "details": "B:1839 Pennsylvania D:before 1880 Pennsylvania",
+          "name_permanent": 0,
+          "code": "TG333041",
+          "kind": "TG",
+          "permanent": 0,
+          "aliases": [],
+          "provisional_facts": [],
+          "relationships": [
+            {
+              "child": "Mary Thorpe",
+              "parent": "Mary Jane Sumner",
+              "relation": "parent",
+              "confidence": 1.0,
+              "permanent": 1
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "code": "TG943760",
+      "registry_matches": [
+        {
+          "person_no": 2,
+          "display_name": "Dudley McCabe",
+          "details": "1946–2019 San Diego, San Diego, California, USA",
+          "name_permanent": 1,
+          "code": "TG943760",
+          "kind": "TG",
+          "permanent": 1,
+          "aliases": [],
+          "provisional_facts": [],
+          "relationships": [
+            {
+              "child": "Dudley McCabe",
+              "parent": "Lester McCabe",
+              "relation": "parent",
+              "confidence": 1.0,
+              "permanent": 1
+            },
+            {
+              "child": "Dudley McCabe",
+              "parent": "Noma Vade Smith",
+              "relation": "parent",
+              "confidence": 1.0,
+              "permanent": 1
+            },
+            {
+              "child": "Me",
+              "parent": "Dudley McCabe",
+              "relation": "parent",
+              "confidence": 1.0,
+              "permanent": 1
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "code": "TG239670",
+      "registry_matches": [
+        {
+          "person_no": 12,
+          "display_name": "Burke C Maynard",
+          "details": "B:11 Jun 1904 North Dakota D:05 Dec 1986 Morro Bay, San Luis Obispo, California, USA",
+          "name_permanent": 1,
+          "code": "TG239670",
+          "kind": "TG",
+          "permanent": 1,
+          "aliases": [],
+          "provisional_facts": [],
+          "relationships": [
+            {
+              "child": "Burke C Maynard",
+              "parent": "Gail Agnes Hillman",
+              "relation": "parent",
+              "confidence": 1.0,
+              "permanent": 1
+            },
+            {
+              "child": "Burke C Maynard",
+              "parent": "William R Maynard",
+              "relation": "parent",
+              "confidence": 1.0,
+              "permanent": 1
+            },
+            {
+              "child": "Grandpa",
+              "parent": "Burke C Maynard",
+              "relation": "parent",
+              "confidence": 1.0,
+              "permanent": 1
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "portable": true,
+  "note": "This snapshot lets the project retain its TG/AKA provenance without requiring the local T14 registry."
+}

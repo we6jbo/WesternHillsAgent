@@ -1,0 +1,23 @@
+app-id: org.j03.WesternHillsAgent
+runtime: org.kde.Platform
+runtime-version: '6.9'
+sdk: org.kde.Sdk
+command: WesternHillsAgent
+
+finish-args:
+  - --share=ipc
+  - --share=network
+  - --socket=wayland
+  - --socket=fallback-x11
+
+modules:
+  - name: WesternHillsAgent
+    buildsystem: cmake-ninja
+    config-opts:
+      - -DCMAKE_BUILD_TYPE=Release
+    post-install:
+      - install -Dm644 packaging/desktop/org.j03.WesternHillsAgent.desktop /app/share/applications/org.j03.WesternHillsAgent.desktop
+      - install -Dm644 packaging/desktop/org.j03.WesternHillsAgent.metainfo.xml /app/share/metainfo/org.j03.WesternHillsAgent.metainfo.xml
+    sources:
+      - type: dir
+        path: ../..
