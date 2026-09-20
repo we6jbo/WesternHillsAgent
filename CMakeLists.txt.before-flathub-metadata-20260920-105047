@@ -40,11 +40,3 @@ target_link_libraries(WesternHillsAgent PRIVATE
 install(TARGETS WesternHillsAgent
     RUNTIME DESTINATION bin
 )
-
-# Flathub desktop integration
-install(FILES org.oneal.WesternHillsAgent.desktop
-        DESTINATION share/applications)
-install(FILES org.oneal.WesternHillsAgent.metainfo.xml
-        DESTINATION share/metainfo)
-install(FILES org.oneal.WesternHillsAgent.svg
-        DESTINATION share/icons/hicolor/scalable/apps)
