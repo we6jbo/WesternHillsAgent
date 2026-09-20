@@ -1,0 +1,8 @@
+[Desktop Entry]
+Type=Application
+Name=WesternHillsAgent
+Comment=Practice and learn fractions
+Exec=WesternHillsAgent
+Icon=org.oneal.WesternHillsAgent
+Terminal=false
+Categories=Education;
